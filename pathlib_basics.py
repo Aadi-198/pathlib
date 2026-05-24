@@ -21,4 +21,3 @@ empty_file= current_path / "empty.txt"
 empty_file.touch()
 
 current_path = current_path.parent
-
