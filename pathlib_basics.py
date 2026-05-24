@@ -8,9 +8,17 @@ print()
 print(f"{hsl_color(260, 100, 60)}{current_path}\033[0m is the current working path !")
 print()
 
+new_folder = Path.cwd() / "New_Folder"
+new_folder.mkdir(parents=True, exist_ok=True)
+
+current_path = Path.cwd() / new_folder
+
 new_file = current_path / "test.txt"
 new_file.write_text("Hello")
 print(f"Does it exist now? {new_file.exists()}")
 
 empty_file= current_path / "empty.txt"
 empty_file.touch()
+
+current_path = current_path.parent
+
