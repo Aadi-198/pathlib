@@ -2,6 +2,8 @@ import time
 import shutil
 from pathlib import Path
 
+from config import EXTENSION_MAP
+
 home = Path.home()
 
 size = shutil.get_terminal_size()
