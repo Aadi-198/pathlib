@@ -2,7 +2,7 @@ import time
 import shutil
 from pathlib import Path
 
-from config import EXTENSION_MAP
+from config import extension_map
 
 home = Path.home()
 
@@ -36,8 +36,10 @@ while running:
 
     if target_path and target_path.exists():
         print(f"Scanning {target_path} ...")
+        time.sleep(0.40)
 
         total_files = 0
+        moved_files = 0
         unique_extensions = set()
 
         for item in target_path.iterdir():
@@ -45,15 +47,30 @@ while running:
                 continue
 
             total_files += 1
+            file_ext = item.suffix.lower()
 
-            if item.suffix:
-                unique_extensions.add(item.suffix.lower())
+            if file_ext:
+                unique_extensions.add(file_ext)
 
+                folder_name = extension_map.get(file_ext, "Others")
+                
+                destination_dir = target_path / folder_name
+                
+                destination_dir.mkdir(exist_ok=True)
+                
+                final_destination = destination_dir / item.name
+                
+                try:
+                    item.rename(final_destination)
+                    print(f"Moved: {item.name} to {folder_name}/")
+                    moved_files += 1
+                except Exception as e:
+                    print(f" Could not move {item.name}: {e}")
         print(f"Scan Completed !")
         time.sleep(0.60)
         print(f"{total_files} loose files found")
         time.sleep(0.40)
-        print(f"Unique file extetions detected : {', '.join(unique_extensions) if unique_extensions else 'None'}\n")
+        print(f"Unique file extensions detected : {', '.join(unique_extensions) if unique_extensions else 'None'}\n")
         print(seps)
 
     else:

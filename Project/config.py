@@ -7,6 +7,8 @@ extension_map = {
     ".xls": "Documents",
     ".xlsx": "Documents",
     ".ods": "Documents",
+    ".pptx": "Documents",
+    ".ppt": "Documents",
     
     ".jpg": "Media",
     ".jpeg": "Media",
@@ -18,5 +20,12 @@ extension_map = {
     
     ".dmg": "Installers",
     ".pkg": "Installers",
-    ".zip": "Installers"
+    ".zip": "Installers",
+
+    ".ics": "Calender",
+
+    ".html": "Dynamic",
+    ".css": "Dynamic",
+    ".js": "Dynamic",
+    ".py": "Dynamic",
 }
