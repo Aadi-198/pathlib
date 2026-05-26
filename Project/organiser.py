@@ -7,7 +7,7 @@ from config import extension_map
 home = Path.home()
 
 size = shutil.get_terminal_size()
-column_size = size.columns
+column_size = size.columns - 1
 seps = (column_size * '-')
 
 target_path = None
