@@ -10,10 +10,12 @@ size = shutil.get_terminal_size()
 column_size = size.columns
 seps = (column_size * '-')
 
+target_path = None
+
 running = True
 while running:
     print(seps)
-    folder = str(input("Which folder you want to sort (downloads / documents) ? \nTo exit type s \n")).lower().strip()
+    folder = str(input("Which folder you want to sort (downloads / documents / custom) ? \nTo exit type s \n")).lower().strip()
 
     if folder.startswith("dow"):
         target_path = home / "Downloads"
@@ -24,6 +26,13 @@ while running:
         target_path = home / "Documents"
         print(seps)
         print(f"\nYour documents folder is: {target_path}\n")
+        running = False
+    elif folder.startswith("c"):
+        print(seps)
+        user_path = str(input("Enter you custom absolute path \n")).strip()
+        target_path = Path(user_path).expanduser().resolve()
+        print(seps)
+        print(f"\nTarget folder set to: {target_path}\n")
         running = False
     elif folder.startswith("s"):
         print("Exiting Program... \nBye")

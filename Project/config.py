@@ -9,6 +9,7 @@ extension_map = {
     ".ods": "Documents",
     ".pptx": "Documents",
     ".ppt": "Documents",
+    ".pages": "Documents",
     
     ".jpg": "Media",
     ".jpeg": "Media",
@@ -17,6 +18,7 @@ extension_map = {
     ".mp3": "Media",
     ".mov": "Media",
     ".webp": "Media",
+    ".svg": "Media",
     
     ".dmg": "Installers",
     ".pkg": "Installers",
