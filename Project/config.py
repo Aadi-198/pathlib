@@ -14,6 +14,7 @@ extension_map = {
     ".jpg": "Media",
     ".jpeg": "Media",
     ".png": "Media",
+    ".wav": "Media",
     ".mp4": "Media",
     ".mp3": "Media",
     ".mov": "Media",
@@ -22,7 +23,10 @@ extension_map = {
     
     ".dmg": "Installers",
     ".pkg": "Installers",
-    ".zip": "Installers",
+    
+    ".zip": "Archives",
+    ".tar": "Archives",
+    ".gz": "Archives",
 
     ".ics": "Calender",
 
