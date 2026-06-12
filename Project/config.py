@@ -34,4 +34,6 @@ extension_map = {
     ".css": "Dynamic",
     ".js": "Dynamic",
     ".py": "Dynamic",
+    ".db": "Dynamic",
+    ".odb": "Dynamic"
 }
